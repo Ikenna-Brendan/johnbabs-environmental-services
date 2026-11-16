@@ -1,0 +1,35 @@
+# Drop this file at the root of a Jomiby repository.
+# Control Center reads it during GitHub sync and upserts the app by slug.
+# Valid stages: concept | self-hosted | scaling-cloud | archived
+# Valid host types: internal-ip | github-pages | cloud-paas
+# Valid environments: production | staging | local
+
+name: Johnbabs Environmental Services
+slug: johnbabs-environmental-services
+summary: >
+  Website for Johnbabs Environmental and Engineering Services. It presents
+  environmental consultancy, restoration, and impact assessment services.
+stage: scaling-cloud
+frameworks:
+  - React
+  - Vite
+  - Tailwind CSS
+  - Express
+  - MongoDB
+  - Docker
+
+repoUrl: https://github.com/Ikenna-Brendan/johnbabs-environmental-services
+liveUrl: https://ikenna-brendan.github.io/johnbabs-environmental-services/
+
+isClientVisible: true
+
+migration:
+  dockerized: true
+  statelessStorage: false
+  envDocumented: true
+  managedDbReady: false
+
+deployments:
+  - environment: production
+    hostType: github-pages
+    healthCheckUrl: https://ikenna-brendan.github.io/johnbabs-environmental-services/
